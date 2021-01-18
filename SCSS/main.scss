@@ -1,0 +1,46 @@
+.main{
+    background-color: lightblue;
+
+    .main-heading{
+        font-size: 2em;
+    }
+
+    .main-paragraph{
+        font-size: 1.4em;
+    }
+}
+
+.main, footer{
+    h1,p{
+        letter-spacing: 1px;
+    }
+}
+
+// &
+// Parent selector
+// menunjukan element diatasnya / parent
+.main{
+    .container &{
+        background-color: lightblue;
+    }
+    .main-heading{
+        fon-size: 2em;
+    }
+
+    //mengacu ke main
+    &:hover{
+        background-color: salmon;
+    }
+}
+
+.footer{
+    //.footer-heading
+    //haisl sama
+    & &-heading{
+        font-size: 2em;
+    }
+
+    & &-paragraph{
+        font-size: 1.4em;
+    }
+}
