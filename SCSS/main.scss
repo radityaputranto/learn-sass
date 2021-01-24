@@ -44,3 +44,50 @@
         font-size: 1.4em;
     }
 }
+
+//CSS variable
+// root memebnri akses semua element HTML ke var ini
+//kemungkinan browset tidak support
+:root{
+    --primary-color:#f4f1de;
+    --secondary-color : #f2cc8f;
+    --text-color: #e07a5f;
+}
+
+body{
+    background-color: var(--primary-color);
+}
+
+h1{
+    color: var(--text-color);
+}
+
+// SASS Variables
+// '-' dan '_' sama bila akan mengakses variable
+
+//variable global
+$orange-color : #fcc03e;
+$green-color : #3efc4e;
+
+small{
+    // local variable
+    $warning-color : #e07a5f;
+    //merubah local varible menjadi global
+    //agar dapat diakses element lain
+    $grey-color : #e3e3e3 !global;
+    // var sama global akan diterpkan dibanding local
+    $green-color :green;
+    color: $orange-color;
+}
+
+// MAP
+// array associative
+$alert : (
+    'danger' : red,
+    'success' : green,
+    'warning' : orange
+);
+
+.alert{
+    color: map-get($alert, 'danger');
+}
