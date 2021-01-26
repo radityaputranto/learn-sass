@@ -1,17 +1,20 @@
-.main{
+.main {
     background-color: lightblue;
 
-    .main-heading{
+    .main-heading {
         font-size: 2em;
     }
 
-    .main-paragraph{
+    .main-paragraph {
         font-size: 1.4em;
     }
 }
 
-.main, footer{
-    h1,p{
+.main,
+footer {
+
+    h1,
+    p {
         letter-spacing: 1px;
     }
 }
@@ -19,28 +22,30 @@
 // &
 // Parent selector
 // menunjukan element diatasnya / parent
-.main{
-    .container &{
+.main {
+    .container-1 & {
         background-color: lightblue;
     }
-    .main-heading{
-        fon-size: 2em;
+
+    .main-heading {
+        font-size: 2em;
     }
 
     //mengacu ke main
-    &:hover{
+    &:hover {
         background-color: salmon;
     }
 }
 
-.footer{
+.footer {
+
     //.footer-heading
     //haisl sama
-    & &-heading{
+    & &-heading {
         font-size: 2em;
     }
 
-    & &-paragraph{
+    & &-paragraph {
         font-size: 1.4em;
     }
 }
@@ -48,17 +53,17 @@
 //CSS variable
 // root memebnri akses semua element HTML ke var ini
 //kemungkinan browset tidak support
-:root{
-    --primary-color:#f4f1de;
-    --secondary-color : #f2cc8f;
+:root {
+    --primary-color: #f4f1de;
+    --secondary-color: #f2cc8f;
     --text-color: #e07a5f;
 }
 
-body{
+body {
     background-color: var(--primary-color);
 }
 
-h1{
+h1 {
     color: var(--text-color);
 }
 
@@ -69,25 +74,88 @@ h1{
 $orange-color : #fcc03e;
 $green-color : #3efc4e;
 
-small{
+small {
     // local variable
-    $warning-color : #e07a5f;
+    $warning-color: #e07a5f;
     //merubah local varible menjadi global
     //agar dapat diakses element lain
-    $grey-color : #e3e3e3 !global;
+    $grey-color: #e3e3e3 !global;
     // var sama global akan diterpkan dibanding local
-    $green-color :green;
+    $green-color: green;
     color: $orange-color;
 }
 
 // MAP
 // array associative
-$alert : (
-    'danger' : red,
+$alert : ('danger' : red,
     'success' : green,
-    'warning' : orange
-);
+    'warning' : orange);
 
-.alert{
+.alert {
     color: map-get($alert, 'danger');
+}
+
+//Mixin
+//kumpulan style yg dapet digunakan berulang ulang
+//hampir sama seperti function 
+
+@mixin inline-list() {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+        display: inline-block;
+    }
+}
+
+.header-link ul {
+    @include inline-list();
+
+    li {
+        background-color: black;
+        padding: 0.7em;
+
+        a {
+            color: white;
+        }
+    }
+}
+
+.footer-link ul {
+    @include inline-list();
+
+    li {
+        background-color: salmon;
+        padding: 0.4em;
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+}
+
+//arguments and mixin
+//nilai default bila atidak ada param di mixin dengan ':'
+@mixin flex-box($direction: row, $space : center) {
+    display: flex;
+    justify-content: $space;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+.container-2 {
+    @include flex-box(row-reverse, space-around);
+    width: 600px;
+    height: 400px;
+    background-color: #eaeaea;
+
+    .box {
+        width: 60px;
+        height: 60px;
+        background-color: #bada55;
+        text-align: center;
+        line-height: 60px;
+    }
 }

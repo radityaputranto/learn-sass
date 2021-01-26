@@ -1,0 +1,118 @@
+.main {
+  background-color: lightblue;
+}
+
+.main .main-heading {
+  font-size: 2em;
+}
+
+.main .main-paragraph {
+  font-size: 1.4em;
+}
+
+.main h1,
+.main p,
+footer h1,
+footer p {
+  letter-spacing: 1px;
+}
+
+.container-1 .main {
+  background-color: lightblue;
+}
+
+.main .main-heading {
+  font-size: 2em;
+}
+
+.main:hover {
+  background-color: salmon;
+}
+
+.footer .footer-heading {
+  font-size: 2em;
+}
+
+.footer .footer-paragraph {
+  font-size: 1.4em;
+}
+
+:root {
+  --primary-color: #f4f1de;
+  --secondary-color: #f2cc8f;
+  --text-color: #e07a5f;
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
+h1 {
+  color: var(--text-color);
+}
+
+small {
+  color: #fcc03e;
+}
+
+.alert {
+  color: red;
+}
+
+.header-link ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.header-link ul li {
+  display: inline-block;
+}
+
+.header-link ul li {
+  background-color: black;
+  padding: 0.7em;
+}
+
+.header-link ul li a {
+  color: white;
+}
+
+.footer-link ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.footer-link ul li {
+  display: inline-block;
+}
+
+.footer-link ul li {
+  background-color: salmon;
+  padding: 0.4em;
+}
+
+.footer-link ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.container-2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row-reverse;
+  width: 600px;
+  height: 400px;
+  background-color: #eaeaea;
+}
+
+.container-2 .box {
+  width: 60px;
+  height: 60px;
+  background-color: #bada55;
+  text-align: center;
+  line-height: 60px;
+}
+/*# sourceMappingURL=main.css.map */
