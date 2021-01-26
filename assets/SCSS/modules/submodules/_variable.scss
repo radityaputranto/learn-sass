@@ -1,0 +1,14 @@
+// SASS Variables
+// '-' dan '_' sama bila akan mengakses variable
+
+//variable global
+$orange-color : #fcc03e;
+$green-color : #3efc4e;
+
+
+
+// MAP
+// array associative
+$alert : ('danger' : red,
+    'success' : green,
+    'warning' : orange);

@@ -1,0 +1,71 @@
+@use 'submodules/variable'as var;
+@use 'submodules/mixin'as m;
+
+.main {
+    background-color: lightblue;
+
+    .main-heading {
+        font-size: 2em;
+    }
+
+    .main-paragraph {
+        font-size: 1.4em;
+    }
+}
+
+.main,
+footer {
+
+    h1,
+    p {
+        letter-spacing: 1px;
+    }
+}
+
+// &
+// Parent selector
+// menunjukan element diatasnya / parent
+.main {
+    .container-1 & {
+        background-color: lightblue;
+    }
+
+    .main-heading {
+        font-size: 2em;
+    }
+
+    //mengacu ke main
+    &:hover {
+        background-color: salmon;
+    }
+}
+
+
+body {
+    background-color: var(--primary-color);
+}
+
+h1 {
+    color: var(--text-color);
+}
+
+
+.alert {
+    color: map-get(var.$alert, 'danger');
+}
+
+
+.container-2 {
+    @include m.flex-box(row-reverse, space-around);
+    width: 600px;
+    height: 400px;
+    background-color: #eaeaea;
+
+    .box {
+        width: 60px;
+        height: 60px;
+        background-color: #bada55;
+        text-align: center;
+        line-height: 60px;
+    }
+}

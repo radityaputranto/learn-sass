@@ -1,0 +1,15 @@
+@use 'submodules/mixin'as m;
+
+//menggunkaan alias / name space
+.header-link ul {
+    @include m.inline-list();
+
+    li {
+        background-color: black;
+        padding: 0.7em;
+
+        a {
+            color: white;
+        }
+    }
+}

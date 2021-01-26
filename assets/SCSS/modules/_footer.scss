@@ -1,0 +1,30 @@
+@use 'submodules/mixin'as m;
+
+.footer-link ul {
+    @include m.inline-list();
+
+    li {
+        background-color: salmon;
+        padding: 0.4em;
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+}
+
+
+
+.footer {
+
+    //.footer-heading
+    //haisl sama
+    & &-heading {
+        font-size: 2em;
+    }
+
+    & &-paragraph {
+        font-size: 1.4em;
+    }
+}

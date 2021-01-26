@@ -1,0 +1,26 @@
+//@import 'mixin','variable';
+//tidak emnggunkaank impiort karena rawan bentrok dan butuh load lama
+@use 'modules/content';
+@use 'modules/header';
+@use 'modules/footer';
+@use 'modules/submodules/variable'as var;
+
+//CSS variable
+// root memebnri akses semua element HTML ke var ini
+//kemungkinan browset tidak support
+:root {
+    --primary-color: #f4f1de;
+    --secondary-color: #f2cc8f;
+    --text-color: #e07a5f;
+}
+
+small {
+    // local variable
+    $warning-color: #e07a5f;
+    //merubah local varible menjadi global
+    //agar dapat diakses element lain
+    $grey-color: #e3e3e3;
+    // var sama global akan diterpkan dibanding local
+    $green-color: green;
+    color: var.$orange-color;
+}
