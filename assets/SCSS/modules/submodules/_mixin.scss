@@ -1,3 +1,4 @@
+@use 'variable'as var;
 // penamanaan dengan '_' menandakan partial
 //akan dipanggil di scss utamaa
 
@@ -22,4 +23,53 @@
     justify-content: $space;
     align-items: center;
     flex-direction: $direction;
+}
+
+//Flow Control
+@mixin profile-pic($size, $circle: false) {
+    width: $size;
+    height: $size;
+    border: 5px solid white;
+    box-shadow: 1px 1px 3px rgba($color: #000000, $alpha: 0.3);
+
+    @if $circle {
+        border-radius: 50%;
+    }
+}
+
+@mixin color-mode($light-mode: true) {
+    @if $light-mode {
+        background-color: var.$light-bg;
+        color: var.$light-text;
+    }
+
+    @else {
+        background-color: var.$dark-bg;
+        color: var.$dark-text;
+    }
+}
+
+@mixin triangle($size, $color, $direction) {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    border-color: transparent;
+    border-style: solid;
+    border-width: $size/2;
+
+    @if $direction==up {
+        border-bottom-color: $color;
+    }
+
+    @else if $direction==down {
+        border-top-color: $color;
+    }
+
+    @else if $direction==left {
+        border-right-color: $color;
+    }
+
+    @else {
+        border-left-color: $color;
+    }
 }
