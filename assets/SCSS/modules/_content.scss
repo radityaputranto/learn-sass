@@ -131,3 +131,17 @@ $social-colors:(youtube: #ff0000,
         }
     }
 }
+
+//built in modules
+/* color.adjust($color,
+  $red: null, $green: null, $blue: null,
+  $hue: null, $saturation: null, $lightness: null,
+  $whiteness: null, $blackness: null,
+  $alpha: null) */
+.h1-modules {
+    //color: adjust-color($color: #000000, $red: 1, $green: 2, $blue: 3, $hue: 0, $saturation: 0%, $lightness: 0%, $alpha: 1.0);
+    //color: adjust-hue($color: salmon, $degrees: -30deg);
+    //color: complement($color:salmon)
+    //color: darken($color:salmon, $amount: 20%);
+    color: fade-in($color: rgba(250, 128, 114, 0.2), $amount: 0.5) //nambah opacity 0.7
+}
